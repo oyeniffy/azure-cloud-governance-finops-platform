@@ -1,0 +1,2 @@
+# Compiled Bicep output — regenerate any time with `az bicep build --file <name>.bicep`
+*.json
