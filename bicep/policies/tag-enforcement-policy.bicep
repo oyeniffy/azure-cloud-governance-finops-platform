@@ -16,7 +16,7 @@ resource tagPolicyDefinition 'Microsoft.Authorization/policyDefinitions@2021-06-
     displayName: 'Deny resource creation without required tags'
     description: 'Denies creation of any resource missing CostCenter, Environment, or Owner tags.'
     policyType: 'Custom'
-    mode: 'Indexed'
+    mode: 'All'
     policyRule: {
       if: {
         anyOf: [for tag in requiredTags: {
