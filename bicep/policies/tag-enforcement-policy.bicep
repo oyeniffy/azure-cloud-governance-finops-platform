@@ -25,7 +25,7 @@ resource tagPolicyDefinition 'Microsoft.Authorization/policyDefinitions@2021-06-
         }]
       }
       then: {
-        effect: 'deny'
+        effect: 'deny'INVALID_SYNTAX_HERE
       }
     }
   }
