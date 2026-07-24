@@ -35,7 +35,7 @@ var workbookContent = {
       type: 3
       content: {
         version: 'KqlItem/1.0'
-        query: 'Resources | where type == \'microsoft.consumption/budgets\' | project name, amount = properties.amount, timeGrain = properties.timeGrain, startDate = properties.timePeriod.startDate'
+        query: 'Resources | where type == \'microsoft.insights/actiongroups\' | project name, enabled = properties.enabled, notificationEmail = properties.emailReceivers[0].emailAddress, tags'
         queryType: 1
         resourceType: 'microsoft.resourcegraph/resources'
         visualization: 'table'
