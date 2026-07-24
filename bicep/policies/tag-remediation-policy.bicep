@@ -12,7 +12,7 @@ resource remediationPolicyDefinition 'Microsoft.Authorization/policyDefinitions@
     displayName: 'Auto-remediate missing Environment tag'
     description: 'Adds a default Environment tag to resources missing it. Does not modify CostCenter or Owner.'
     policyType: 'Custom'
-    mode: 'Indexed'
+    mode: 'All'
     parameters: {
       tagValue: {
         type: 'String'
