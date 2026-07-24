@@ -14,7 +14,7 @@ resource anomalyAlert 'Microsoft.CostManagement/scheduledActions@2023-11-01' = {
       to: [
         alertEmail
       ]
-      subject: 'Azure Cost Anomaly Detected — Governance/FinOps Platform'
+      subject: 'Azure Cost Anomaly Detected'
     }
     schedule: {
       frequency: 'Daily'
