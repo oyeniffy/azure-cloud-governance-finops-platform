@@ -31,6 +31,16 @@ var workbookContent = {
         visualization: 'piechart'
       }
     }
+    {
+      type: 3
+      content: {
+        version: 'KqlItem/1.0'
+        query: 'Resources | where type == \'microsoft.consumption/budgets\' | project name, amount = properties.amount, timeGrain = properties.timeGrain, startDate = properties.timePeriod.startDate'
+        queryType: 1
+        resourceType: 'microsoft.resourcegraph/resources'
+        visualization: 'table'
+      }
+    }
   ]
 }
 
