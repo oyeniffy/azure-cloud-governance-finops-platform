@@ -21,6 +21,16 @@ var workbookContent = {
         json: '# Governance & FinOps Dashboard\n\nCost and compliance data for the governed subscription.'
       }
     }
+    {
+      type: 3
+      content: {
+        version: 'KqlItem/1.0'
+        query: 'PolicyResources | where type == \'microsoft.policyinsights/policystates\' | summarize count() by tostring(properties.complianceState)'
+        queryType: 1
+        resourceType: 'microsoft.resourcegraph/resources'
+        visualization: 'piechart'
+      }
+    }
   ]
 }
 
