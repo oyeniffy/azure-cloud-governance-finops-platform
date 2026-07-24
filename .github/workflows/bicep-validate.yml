@@ -1,0 +1,41 @@
+name: Bicep Validation
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'bicep/**'
+  push:
+    branches: [main]
+    paths:
+      - 'bicep/**'
+
+jobs:
+  validate:
+    name: Validate Bicep files
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Bicep CLI
+        run: az bicep install
+
+      - name: Find and build all Bicep files
+        run: |
+          set -e
+          FILES=$(find bicep -name "*.bicep")
+          if [ -z "$FILES" ]; then
+            echo "No .bicep files found."
+            exit 0
+          fi
+          echo "Found Bicep files:"
+          echo "$FILES"
+          echo ""
+          for file in $FILES; do
+            echo "Building: $file"
+            az bicep build --file "$file"
+          done
+          echo ""
+          echo "All Bicep files compiled successfully."
